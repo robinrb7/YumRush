@@ -2,6 +2,7 @@
 A user-centric full-stack Android applicatiion for restaurant discovery and personalized food ordering.
 
 
+![Login](https://github.com/user-attachments/assets/0bdc8cbb-cf2c-4125-976d-fd8475aa5e8d)
 
 # Features 
 - Explore restaurants and view menus
