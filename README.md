@@ -57,31 +57,6 @@ A user-centric full-stack Android applicatiion for restaurant discovery and pers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Features 
 - Explore restaurants and view menus
 - Place and customize food orders
