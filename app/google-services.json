@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "941248846267",
+    "project_id": "epic-eats-4893b",
+    "storage_bucket": "epic-eats-4893b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941248846267:android:99ac6e6bad3ab88c4f8c9e",
+        "android_client_info": {
+          "package_name": "com.example.epiceats"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGeDFq5yJCV8cHx1tRAhgwZH6tSg9zpYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
