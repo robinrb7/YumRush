@@ -2,7 +2,7 @@
 A user-centric full-stack Android applicatiion for restaurant discovery and personalized food ordering.
 
 
-<img width="300" height="667" alt="Untitled design (2)" src="https://github.com/user-attachments/assets/371471ed-84ae-40d8-9fbf-ee5634c94530" /> style="margin-right: 10px;" />
+<img width="300" height="667" alt="Untitled design (2)" src="https://github.com/user-attachments/assets/371471ed-84ae-40d8-9fbf-ee5634c94530" /> src="        " />
 <img width="300" height="667" alt="Untitled design (3)" src="https://github.com/user-attachments/assets/09bd7305-fe58-46d2-a520-cbd4e2c0d235" />
 
 <img width="300" height="670" alt="1" src="https://github.com/user-attachments/assets/d95dc09b-dcea-4961-8ce1-98064f9db4e9" />
