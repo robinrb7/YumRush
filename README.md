@@ -1,2 +1,7 @@
-# Epic-Eats
-A user-centric Android application enabling seamless restaurant discovery, personalized order customization, and real-time order updates.
+# YumRush - Full-Stack Food Delivery Application
+A user-centric full-stack Android applicatiion for restaurant discovery and personalized food ordering.
+
+
+
+# Features 
+
