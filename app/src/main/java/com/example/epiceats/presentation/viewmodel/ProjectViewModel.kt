@@ -4,7 +4,8 @@ package com.example.epiceats.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.epiceats.common.ResultState
-import com.example.epiceats.data.models.UserData
+import com.example.epiceats.data.models.AuthRequest
+import com.example.epiceats.data.models.TokenPair
 import com.example.epiceats.domain.usecases.CreateUserUseCase
 import com.example.epiceats.domain.usecases.LoginUserCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,7 +27,7 @@ class ProjectViewModel @Inject constructor(
     private val _loginScreenState = MutableStateFlow(LoginScreenState())
     val loginScreenState = _loginScreenState.asStateFlow()
 
-    fun createUser(userData: UserData){
+    fun createUser(userData: AuthRequest){
         viewModelScope.launch{
             createUserUseCase.createUser(userData).collect {
                 when(it){
@@ -38,15 +39,13 @@ class ProjectViewModel @Inject constructor(
                     }
 
                     ResultState.Loading -> {
-                        _signUpScreenState.value = _signUpScreenState.value.copy(
-                            isLoading = true
-                        )
+                        _signUpScreenState.value = _signUpScreenState.value.copy(isLoading = true)
                     }
 
                     is ResultState.Success -> {
                         _signUpScreenState.value = _signUpScreenState.value.copy(
                             isLoading = false,
-                            userData = it.data
+                            tokenPair = it.data
                         )
                     }
                 }
@@ -55,7 +54,7 @@ class ProjectViewModel @Inject constructor(
     }
 
 
-    fun loginUser(userData: UserData){
+    fun loginUser(userData: AuthRequest){
         viewModelScope.launch{
             loginUserUseCase.loginUser(userData).collect {
                 when(it){
@@ -75,7 +74,7 @@ class ProjectViewModel @Inject constructor(
                     is ResultState.Success -> {
                         _loginScreenState.value = _loginScreenState.value.copy(
                             isLoading = false,
-                            userData = it.data
+                            tokenPair = it.data
                         )
                     }
                 }
@@ -91,12 +90,12 @@ class ProjectViewModel @Inject constructor(
 data class SignUpScreenState(
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
-    val userData: String? = null
+    val tokenPair: TokenPair? = null
 )
 
 data class LoginScreenState(
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
-    val userData: String? = null
+    val tokenPair: TokenPair? = null
 )
 

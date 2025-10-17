@@ -2,19 +2,19 @@ package com.example.epiceats.domain.domainmodule
 
 import com.example.epiceats.data.repoImpl.RepoImpl
 import com.example.epiceats.domain.repo.Repo
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object DomainModule {
 
+    @Singleton
     @Provides
-    fun provideRepo(firebaseAuth: FirebaseAuth, firebaseFirestore: FirebaseFirestore): Repo {
-        return RepoImpl(firebaseAuth,firebaseFirestore)
+    fun provideRepo(): Repo {
+        return RepoImpl()
     }
 }

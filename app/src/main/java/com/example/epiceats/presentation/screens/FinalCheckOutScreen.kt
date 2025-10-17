@@ -69,7 +69,7 @@ import com.example.epiceats.presentation.utils.OrderPlaceDialog
 fun FinalCheckOutScreen(navController: NavController){
     var showOrderDialog by remember { mutableStateOf(false) }
 
-    var name by remember { mutableStateOf("Rominus Pizza And Burger")}
+    var name by remember { mutableStateOf("La Roma Pizzzeria")}
     var time by remember { mutableStateOf("37 mins") }
     var productName by remember {mutableStateOf("Peri Peri Burger") }
     var itemPrice by remember {mutableIntStateOf(129)}
@@ -90,7 +90,7 @@ fun FinalCheckOutScreen(navController: NavController){
                             Text(text = "$time to Home", color = Color.Gray,
                                 fontSize = 13.sp, fontWeight = FontWeight.SemiBold)
                             VerticalDivider(modifier = Modifier.padding(horizontal = 4.dp).padding(top = 10.dp,bottom = 12.dp))
-                            Text(text = "256,Shanti Nagar,Ghaziabad..", fontSize = 12.sp,color = Color.DarkGray)
+                            Text(text = "Hostel J,Prem Nagar,Thapar...", fontSize = 12.sp,color = Color.DarkGray)
                             Icon(painter = painterResource(R.drawable.down_arrow),
                                 modifier = Modifier.padding(horizontal = 3.dp).size(14.dp),
                                 tint = Color.DarkGray,
@@ -237,7 +237,7 @@ fun ProductCard(productName: String,
                     .padding(horizontal = 12.dp)
             ){
                 Text(
-                    text = "Get Gold for 3 months",
+                    text = "Get Premium for 3 months",
                     color = Color.DarkGray,
                     fontWeight = FontWeight.SemiBold,
                     fontSize = 14.sp
@@ -554,7 +554,7 @@ fun AddressAndBillCard(time: String, newPrice: Int){
                 Spacer(modifier = Modifier.height(8.dp))
 
                 Text(
-                    text = "265,Shanti Nagar,Ghaziabad...",
+                    text = "Hostel J,Prem Nagar.....",
                     fontSize = 12.sp,
                     color = Color.Gray
                 )

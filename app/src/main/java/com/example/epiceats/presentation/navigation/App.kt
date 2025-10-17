@@ -110,7 +110,7 @@ fun App(isVisible: Boolean, listState: LazyListState){
         ),
     )
 
-    val selectedColor = colorResource(R.color.purple_500)
+    val selectedColor = colorResource(R.color.ZomatoGold)
     val bottomBarHeight by animateDpAsState(
         targetValue = if(isVisible) 64.dp else 0.dp
     )

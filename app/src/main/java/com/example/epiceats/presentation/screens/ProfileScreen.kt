@@ -99,13 +99,13 @@ fun ProfileScreen(navController: NavController){
                     Spacer(modifier = Modifier.width(7.dp))
                     Column{
                         Text(
-                            text = "Name",
+                            text = "Robin",
                             color = Color.Black,
                             fontWeight = FontWeight.Bold,
                             fontSize = 23.sp
                         )
                         Text(
-                            text = "gmail2025@gmail.com",
+                            text = "robin7khural@gmail.com",
                             color = Color.DarkGray,
                             fontSize = 12.sp
                         )
@@ -157,7 +157,7 @@ fun ZomatoGold(){
             )
             Spacer(modifier = Modifier.width(10.dp))
             Text(
-                text = "Join Zomato Gold",
+                text = "Join Premium ",
                 color = colorResource(id = R.color.ZomatoGold),
                 fontWeight = FontWeight.Bold
             )

@@ -58,7 +58,7 @@ fun ExploreCards(
 ){
 
     Card(
-        modifier = Modifier.size(width = 80.dp,height = 90.dp),
+        modifier = Modifier.size(width = 80.dp,height = 75.dp),
         elevation = CardDefaults.cardElevation(1.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White)
         )

@@ -66,10 +66,10 @@ fun DeliveryTopAppBar(scrollBehavior: TopAppBarScrollBehavior, navController: Na
                     .clickable{
                         navController.navigate(Routes.ProfileScreen)
                     }
-                    .background(Color.LightGray,CircleShape),
+                    .background(Color.DarkGray,CircleShape),
                 contentAlignment = Alignment.Center
             ){
-                Text( "R", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = Color.Blue)
+                Text( "R", fontWeight = FontWeight.Bold, fontSize = 16.sp, color = colorResource(R.color.ZomatoGold))
             }
         },
         colors = TopAppBarDefaults.topAppBarColors(Color.Transparent),

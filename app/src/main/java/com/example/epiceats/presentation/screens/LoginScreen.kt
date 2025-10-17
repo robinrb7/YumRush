@@ -32,6 +32,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -58,7 +59,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.epiceats.R
-import com.example.epiceats.data.models.UserData
+import com.example.epiceats.data.models.AuthRequest
 import com.example.epiceats.presentation.components.OrComponent
 import com.example.epiceats.presentation.navigation.Routes
 import com.example.epiceats.presentation.navigation.SubNavigation
@@ -68,23 +69,32 @@ import com.example.epiceats.presentation.viewmodel.ProjectViewModel
 fun LoginScreen(viewModel: ProjectViewModel = hiltViewModel(),
                 navController: NavController){
     val state = viewModel.loginScreenState.collectAsStateWithLifecycle()
-    val showDialog = remember { mutableStateOf(false) }
     val context = LocalContext.current
+
+
+
+    LaunchedEffect(state.value.errorMessage) {
+        state.value.errorMessage?.let { message ->
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    // Navigate to MainHomeScreen if login successful
+    LaunchedEffect(state.value.tokenPair) {
+        state.value.tokenPair?.let {
+            navController.navigate(SubNavigation.MainHomeScreen) {
+                popUpTo("LoginScreen") { inclusive = false } // removes login from backstack
+            }
+        }
+    }
 
     if(state.value.isLoading){
         Box(modifier = Modifier.fillMaxSize()){
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
 
-    } else if (state.value.errorMessage != null){
-        Box(modifier = Modifier.fillMaxSize()){
-            Text(text = state.value.errorMessage!!)
-        }
-
-    } else if (state.value.userData != null){
-        navController.navigate(SubNavigation.MainHomeScreen)
-
-    } else {
+    }
+    else {
         var email by remember { mutableStateOf("") }
         var password by remember { mutableStateOf("") }
 
@@ -160,7 +170,7 @@ fun LoginScreen(viewModel: ProjectViewModel = hiltViewModel(),
                 //here is the login button
                 Button(onClick = {
                     if(email.isNotBlank() && password.isNotBlank()){
-                        val userData = UserData(
+                        val userData = AuthRequest(
                             email = email,
                             password = password
                         )

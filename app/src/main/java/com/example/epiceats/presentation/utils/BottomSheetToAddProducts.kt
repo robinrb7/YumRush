@@ -187,7 +187,7 @@ fun BottomSheetToAddProduct(onDismiss: () -> Unit, navController: NavController)
                                 .height(280.dp)
                         ){
                             Image(
-                                painter = painterResource(id = R.drawable.pav_bhaji),
+                                painter = painterResource(id = R.drawable.burger_bottomsheet),
                                 contentDescription = "Location Background",
                                 modifier = Modifier.fillMaxSize()
                                     .padding(12.dp)
@@ -244,7 +244,7 @@ fun BottomSheetToAddProduct(onDismiss: () -> Unit, navController: NavController)
                                 verticalAlignment = Alignment.Top
                             ){
                                 Text(
-                                    text = "Brick Oven Pizza",
+                                    text = "Peri Peri Burger",
                                     color = Color.Black,
                                     fontSize = 22.sp,
                                     fontWeight = FontWeight.Bold,

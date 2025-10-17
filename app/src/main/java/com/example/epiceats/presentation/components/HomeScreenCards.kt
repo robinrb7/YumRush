@@ -163,7 +163,7 @@ fun PagerCount(pagerState: PagerState){
 
 @Composable
 fun DetailCard(){
-    val restaurantName = remember{mutableStateOf("Haldiram's")}
+    val restaurantName = remember{mutableStateOf("La Roma's")}
     val rating =  remember{ mutableStateOf("4.2")}
 
     Card(

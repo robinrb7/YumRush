@@ -31,6 +31,7 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -55,7 +56,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.example.epiceats.R
-import com.example.epiceats.data.models.UserData
+import com.example.epiceats.data.models.AuthRequest
 import com.example.epiceats.presentation.components.CheckboxComponent
 import com.example.epiceats.presentation.components.OrComponent
 import com.example.epiceats.presentation.navigation.Routes
@@ -66,18 +67,28 @@ import com.example.epiceats.presentation.viewmodel.ProjectViewModel
 fun SignUpScreen(viewModel: ProjectViewModel = hiltViewModel(),
                  navController: NavController){
     val state = viewModel.signUpScreenState.collectAsStateWithLifecycle()
+    val context = LocalContext.current
+
+    LaunchedEffect(state.value.errorMessage) {
+        state.value.errorMessage?.let { message ->
+            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+        }
+    }
+
+    LaunchedEffect(state.value.tokenPair) {
+        state.value.tokenPair?.let {
+            navController.navigate(SubNavigation.MainHomeScreen) {
+                popUpTo(SubNavigation.LoginSignUpScreen) { inclusive = false }
+            }
+        }
+    }
 
     if(state.value.isLoading){
         Box(modifier = Modifier.fillMaxSize()){
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
         }
-    }else if(state.value.errorMessage != null){
-        Box(modifier = Modifier.fillMaxSize()){
-            Text(text = state.value.errorMessage!!)
-        }
-    }else if(state.value.userData != null){
-        navController.navigate(SubNavigation.MainHomeScreen)
-    }else{
+    }
+    else{
         var fullName by remember { mutableStateOf("") }
         var email by remember { mutableStateOf("") }
         var address by remember { mutableStateOf("") }
@@ -176,10 +187,8 @@ fun SignUpScreen(viewModel: ProjectViewModel = hiltViewModel(),
                               && password.isNotBlank() && confirmPassword.isNotBlank()
                           ) {
                               if (password == confirmPassword) {
-                                  val userData = UserData(
-                                      username = fullName,
+                                  val userData = AuthRequest(
                                       email = email,
-                                      address = address,
                                       password = password
                                   )
 
@@ -187,7 +196,7 @@ fun SignUpScreen(viewModel: ProjectViewModel = hiltViewModel(),
                               } else {
                                   Toast.makeText(
                                       context,
-                                      "Passwords adn Confirm password do not match",
+                                      "Passwords and Confirm password do not match",
                                       Toast.LENGTH_SHORT
                                   ).show()
                               }
