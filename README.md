@@ -3,6 +3,8 @@ A user-centric full-stack Android applicatiion for restaurant discovery and pers
 
 
 <img width="300" height="667" alt="Untitled design (2)" src="https://github.com/user-attachments/assets/371471ed-84ae-40d8-9fbf-ee5634c94530" />
+<img width="300" height="667" alt="Untitled design (3)" src="https://github.com/user-attachments/assets/09bd7305-fe58-46d2-a520-cbd4e2c0d235" />
+
 
 
 
