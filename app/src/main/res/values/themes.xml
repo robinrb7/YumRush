@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name = "Theme.EpicEatsSplashScreen" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground"> @color/redish</item>
-        <item name="windowSplashScreenAnimatedIcon"> @drawable/komato</item>
+        <item name="windowSplashScreenBackground"> @color/completecentageback</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splashscreen_logo</item>
         <item name="postSplashScreenTheme"> @style/Theme.EpicEats</item>
 
     </style>

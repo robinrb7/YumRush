@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     //Quick Screen
-    <color name="orange">#fb8500</color>
+    <color name="spbackground">#EFC955</color>
     <color name="lightPink">#fff5f6</color>
     <color name="addButtonRed">#CE1022</color>
     <color name="greyish8Black">#464959</color>

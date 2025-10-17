@@ -54,8 +54,8 @@ import com.example.epiceats.presentation.utils.BottomSheetToAddProduct
 fun ParticularCardScreen(navController: NavController){
     var showBottomSheet = remember { mutableStateOf(false) }
 
-    var firstName by remember { mutableStateOf("Rominus Pizza") }
-    var lastName by remember { mutableStateOf("Burger") }
+    var firstName by remember { mutableStateOf("La Roma's") }
+    var lastName by remember { mutableStateOf("Pizzeria") }
     var rating by remember { mutableStateOf("4.2") }
     var time by remember { mutableStateOf("37 mins") }
     var distance by remember { mutableStateOf("2.6 km") }
