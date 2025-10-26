@@ -4,6 +4,7 @@ A user-centric full-stack Android application for restaurant discovery and perso
 # Demo Video  [![LinkedIn](https://img.shields.io/badge/🔗%20LinkedIn-Video-blue?logo=linkedin&style=for-the-badge)](https://www.linkedin.com/feed/update/urn:li:activity:7385296411656994816/)
 
 
+# Screenshots 
 <table>
   <!-- Row 1 -->
   <tr>
