@@ -1,7 +1,9 @@
 # YumRush - Full-Stack Food Delivery Application
 A user-centric full-stack Android application for restaurant discovery and personalized food ordering.
 
-# Demo Video  [![LinkedIn](https://img.shields.io/badge/🔗%20LinkedIn-Video-blue?logo=linkedin&style=for-the-badge)](https://www.linkedin.com/feed/update/urn:li:activity:7385296411656994816/)
+🎥 **Watch the Demo:**  
+[![Jarvis Demo Video](https://img.shields.io/badge/▶️%20Watch%20Demo-%23FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.linkedin.com/feed/update/urn:li:activity:7385296411656994816/)
+
 
 
 # Screenshots 
